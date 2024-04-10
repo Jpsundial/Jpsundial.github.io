@@ -1,0 +1,419 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@500&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 6.5vh;
+    color: rgb(255, 100, 0);
+    padding-top: 0.5vh;
+    text-shadow: 0 0 20px black;
+}
+
+.soleil{
+    height: 7vh;
+}
+
+.soleil img{
+    display: block;
+    height: 100%;
+    width: 100%;
+}
+
+h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 3.5vh;
+    padding: 0.5vh;
+    color: rgb(255, 100, 0);
+    text-shadow: 0 0 20px black;
+}
+
+body {
+    background: url(./Photos/Sunset.webp);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+.text01 {
+    position: relative;
+    font-size: 0.73vw;
+    color: black;
+    top: 0.5vw;
+    left: 17.2vw;
+    font-family: 'Raleway', sans-serif;
+}
+
+.gauche{
+    position: absolute;
+    display: block;
+    width:25.1vw ;
+    height: 19.3vw;
+    top: 32.5vh;
+    left:17.35vw;
+}
+
+.gauche img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.gauche #carrousel {
+    position: relative;
+    font-size: 0.65vw;
+    font-weight: bold;
+    color:blue ;
+    text-shadow: 0 0 40px black;
+    bottom: -2.6%;
+    margin-left: 15%;
+}
+.carrousel_2{
+    visibility: hidden;
+} 
+
+.droite {
+    position: absolute;
+    display: block;
+    width: 35vw;
+    height: 19.3vw;
+    top: 32.5vh;
+    left: 42.75vw;
+}
+
+.droite img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+#next{
+    position: relative;
+    background-color: rgb(252, 224, 160);
+    height:5% ;
+    width: 14.5%;
+    border-radius: 4px;   
+    top: 17.2vw;
+    left: 99.8%;
+    color: black;
+    font-size: 0.55vw;
+    cursor: pointer;
+    transition: 0.8s;
+}
+
+#prev{
+    position:relative;
+    background-color: rgb(252, 224, 160);
+    height: 5%;
+    width:14.5%;
+    border-radius: 4px;
+    top: 18.4vw ;
+    left: 85%;
+    color: black;
+    font-size: 0.55vw;
+    cursor: pointer;
+    transition: 0.8s;
+}
+
+#prev:hover{
+    background: rgb(255,100, 0);
+}
+
+#next:hover{
+    background: rgba(255,100,0);
+}
+
+#cercle {
+    position: absolute;
+    height: 8.7%;
+    width: 4.9%;
+    background: blue;
+    border-radius: 50%;
+    margin-left:0;
+    bottom:-10%;
+    z-index: +1;
+}
+#cercle_2{visibility: hidden;}
+
+.droite #compteur {
+    position: absolute;  
+    font-size: 0.69vw;
+    font-weight: bold;
+    color: yellow;
+    bottom: -7.8%;
+    margin-left: 0.1%;
+    transition: 0.8s;
+    z-index: +2;
+}
+#compteur_2{visibility: hidden;}
+
+.droite #legende {
+    position: absolute;
+    font-size: 0.69vw;
+    font-weight: bold;
+    color: blue;
+    text-shadow: 0 0 40px black;
+    bottom: -7.8%;
+    margin-left: 6%;
+    transition: 0.8s;
+}
+#legende_2{visibility: hidden;}
+
+.slide{
+    position: absolute;
+    width: 34.6vw;
+    height: 19.34vw; 
+    opacity: 0;
+    list-style: none;
+ }
+
+ .slide.active{
+     opacity: 1;
+ }
+ 
+ .slide img{
+     display: block;
+      height: 100%;
+      width: 100%;
+      overflow: hidden;
+      object-fit: cover;
+  }
+ 
+#text_3 {
+    position: absolute;
+    top:80vh;
+    left: 37.35vw;
+    font-size: 0.88vw;
+    color: black;
+    font-family: 'Raleway', sans-serif;
+}
+#text_4{visibility: hidden;}
+
+#bouton {
+    position: absolute;
+    top: 80vh;
+    left: 49.5vw;
+    background-color: rgb(240, 120, 0);
+    border-radius: 4px;
+    font-size: 0.88vw;
+    color: blue;
+    cursor: pointer;
+}
+
+#bouton :link {
+    text-decoration: none;
+}
+
+#bouton :hover {
+    background-color: rgb(254, 50, 0);
+    color: darkblue;
+    transition: 0.5s;
+}
+
+footer {
+    position: absolute;
+    margin-left: 0.7vw;
+    height: 1.5vw;
+    width: 30vw;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space space-between;
+    bottom: 1vh;
+}
+
+#symbole {
+    font-family: 'Raleway', sans-serif;
+    color: rgb(254, 20, 0);
+    font-size: 0.71vw;
+    padding-top: 1%;
+    padding-left: 1.2%;
+}
+
+#lien1 { 
+    margin-top: 1%;
+    padding-left: 5%;
+    font-size: 0.80vw;
+    color: blue;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 1100px) {
+    header {
+        padding: 10px;
+    }
+    h1{
+        font-size:6.5vw;
+    }
+
+    .soleil{
+        height: 7vw;
+    }
+    
+    .soleil img{
+        display: block;
+        height: 100%;
+        width: 100%;
+    }
+
+    h2{
+        font-size: 3.5vw;
+    }
+
+    .text01{
+        position: relative;  
+        font-size: 2.2vw;
+        left: 1vw;
+        top:0vw;
+    }
+
+    .gauche{
+        position: relative;
+        height: 40vw;
+        width:52vw;
+        left: 24vw;
+        top: 1vw;
+    }
+
+    .gauche #carrousel{
+        visibility: hidden;
+    }
+
+    .carrousel_2{
+        position: relative;
+        visibility: visible;
+        font-size: 1.8vw;
+        font-weight: bold;
+        color:blue ; 
+        left: 26.5vw;
+        top: 2vw;
+    }
+
+    .droite{
+        position: relative;
+        height: 40vw;
+        width: 71vw;
+        left: 14.5vw;
+        top: 3vw;
+    }
+    
+    .slide img{
+        height: 40vw;
+        width: 71vw;
+        object-fit: cover;
+     }
+
+     #next{
+        position:relative;
+        visibility: visible;
+        background-color: rgb(252, 224, 160);
+        height: 3.4vw;
+        width: 16vw;
+        border-radius: 4px;
+        top: 41vw;
+        left: 43.25vw;
+        color: black;
+        font-size: 1.8vw;
+        cursor: pointer;
+        transition: 0.8s;
+    }
+
+    #prev{
+        position:relative;
+        visibility: visible;
+        background-color: rgb(252, 224, 160);
+        height: 3.4vw;
+        width: 16vw;
+        border-radius: 4px;
+        top: 41vw;
+        left: -5vw;
+        color: black;
+        font-size: 1.8vw;
+        cursor: pointer;
+        transition: 0.8s;
+    }
+    
+    #cercle{visibility: hidden;}
+    #cercle_2{
+        position: relative;
+        visibility: visible;
+        height: 4.5vw;
+        width: 4.5vw;
+        background: blue;
+        border-radius: 50%;
+        left: 47.7vw;
+        top:4.5vw;
+        z-index: +1;
+    }
+
+    #compteur{visibility: hidden;}
+    #compteur_2{
+        position: relative;
+        visibility: visible;
+        font-size: 1.8vw;
+        font-weight: bold;
+        color: yellow;
+        left: 47.8vw;
+        top: 1.4vw;
+        transition: 0.8s;
+        z-index: +2;
+    }
+    
+    #legende{visibility: hidden;}
+    #legende_2{
+        position: relative;
+        visibility: visible;
+        font-size: 1.8vw;
+        font-weight: bold;
+        color:blue;
+        text-shadow: 0 0 40px black;
+        left: 13vw;
+        top: 4vw;
+        transition: 0.8s;
+    }
+
+    #bouton{visibility: hidden;}
+    #text_3{visibility: hidden;}
+    #text_4{
+        position:absolute;
+        visibility: visible;
+        font-size: 2vw;
+        bottom: 10vw;
+        left: 21.9vw;
+        color:white;
+        font-family: 'Raleway', sans-serif;
+        color: rgb(255, 100, 0);
+    }
+
+    footer {
+        margin-left: 1.5vw;
+        height: 2vw;
+        width: 60vw;
+        bottom: 2vh;
+    }
+
+    #symbole {
+        font-size: 2vw;
+        padding-top: 1%;
+        padding-left: 1.2%;
+    }
+    
+    #lien1 { 
+        margin-top: -3.6%;
+        padding-left: 30%;
+        font-size: 2vw;
+    }
+   
+}

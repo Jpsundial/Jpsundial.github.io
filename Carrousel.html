@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+    <link rel="stylesheet" href="Carrousel.css" media="screen" />
+    <link rel="shortcut icon" href="Photos/SO.jpg" />
+    <style>
+      a {
+        color: blue;
+      }
+    </style>
+    <title>Document</title>
+  </head>
+
+  <body>
+
+    <header>
+      <h1>CaSoVeDeC</h1>
+      <div class="soleil">
+        <img src="Photos/LOGO_110.webp" alt="" />
+      </div>
+      <h2>Cadrans Solaires Verticaux Déclinants</h2>
+
+      <div class="carrousel">
+        <button class="btn" id="prev">&#10096;</button>
+        <button class="btn" id="next">&#10097;</button>
+        <button id="bouton" type="submit">
+          <a href="index.html">&nbsp;&nbsp; Page d'accueil &nbsp;</a>
+        </button>
+       
+        <div class="cercle"></div>
+        <div id="compteur">01/16</div>
+        <div id="legende">
+          Cadran du matin orienté Nord-Est: latitude 47°, heures solaires
+          locales, heures babyloniques, heures italiques.
+        </div>
+        
+        <ul>
+          <li class="slide active">
+            <img src="Slider/NNE.webp" />
+          </li>
+        </ul>
+        <ul>
+          <li class="slide">
+            <img src="Slider/NNE_1.webp" />
+          </li>
+        </ul>
+        <ul>
+          <li class="slide">
+            <img src="Slider/NE.webp" />
+          </li>
+        </ul>
+        <ul>
+          <li class="slide">
+            <img src="Slider/NE_1.webp" />
+          </li>
+        </ul>
+        <ul>
+          <li class="slide">
+            <img src="Slider/NO.webp" />
+          </li>
+        </ul>
+        <ul>
+          <li class="slide">
+            <img src="Slider/NO_1.webp" />
+          </li>
+        </ul>
+        <ul>
+          <li class="slide">
+            <img src="Slider/LG.webp" />
+          </li>
+        </ul>
+        <ul>
+          <li class="slide">
+            <img src="Slider/LG_1.webp" />
+          </li>
+        </ul>
+        <ul>
+          <li class="slide">
+            <img src="Slider/MERI.webp" />
+          </li>
+        </ul>
+        <ul>
+          <li class="slide">
+            <img src="Slider/ORI.webp" />
+          </li>
+        </ul>
+        <ul>
+          <li class="slide">
+            <img src="Slider/OCCI.webp" />
+          </li>
+        </ul>
+        <ul>
+          <li class="slide">
+            <img src="Slider/GUYA.webp" />
+          </li>
+        </ul>
+        <ul>
+          <li class="slide">
+            <img src="Slider/SEPT.webp" />
+          </li>
+        </ul>
+        <ul>
+          <li class="slide">
+            <img src="Slider/NORVG.webp" />
+          </li>
+        </ul>
+        <ul>
+          <li class="slide">
+            <img src="Slider/MERIDI.webp" />
+          </li>
+        </ul>
+        <ul>
+          <li class="slide">
+            <img src="Slider/NA.webp" />
+          </li>
+        </ul>
+      </div>
+
+    </header>
+
+  </body>
+
+  <footer>
+    <div id="symbole">NLA-jpv : 2022</div>
+    <div id="lien1">
+      <a href="https://ccs.saf-astronomie.fr"
+        >SAF_Comission des cadrans solaires</a
+      >
+    </div>
+  </footer>
+
+  <script>
+    let i;
+    let n;
+
+    const buttons = document.querySelectorAll(".btn");
+    const slides = document.querySelectorAll(".slide");
+    const Compteur = document.querySelector("#compteur");
+    const Legende = document.querySelector("#legende");
+  
+    var C_arr = new Array();
+    var L_arr = new Array(); 
+
+    L_arr[0] =
+      " Cadran du matin orienté Nord-Est: latitude 47°, heures solaires locales, heures babyloniques, heures italiques.";
+    L_arr[1] =
+      " Cadran du matin orienté Nord-Est: heures solaires locales, heures temporaires, heures babyloniques, heures italiques.";
+    L_arr[2] =
+      " Cadran orienté Sud-Est: heures solaires locales, heures babyloniques, heures italiques, méridienne de temps solaire moyen.";
+    L_arr[3] =
+      " Cadran Sud-Est: pastilles toutes les 5 minutes sur les courbes d'égales déclinaisons pour faciliter interpolation de l'heure.";
+    L_arr[4] = " Cadran de l'après-midi orienté Sud-Ouest.";
+    L_arr[5] =
+      " Cadran orienté Sud-Ouest: courbes d'égales déclinaisons de bleu solstice d'hiver à rouge solstice d'été. ";
+    L_arr[6] =
+      " Cadran d'heures légales (heures d'hiver en bleu, heures d'été en rouge): longitude 0°36'19'' Ouest, déclinaison 54° Est.";
+    L_arr[7] =
+      " Cadran d'heures légales orienté Sud-Est avec courbes complètes: longitude 0°36'19'' Ouest, déclinaison 54° Est.";
+    L_arr[8] =
+      " Cadran méridional pour la latitude de la France: déclinaison 0° 0' 0''.";
+    L_arr[9] =
+      " Cadran oriental pour la latitude de la France: déclinaison 90° 0' 0'' Est.";
+    L_arr[10] =
+      " Cadran occidental pour la latitude de la France: déclinaison 90° 0' 0'' Ouest.";
+    L_arr[11] =
+      " Cadrans pour la latitude de la Guyane: oriental à droite, occidental à gauche.";
+    L_arr[12] =
+      " Cadran septentrional pour la latitude de la France avec plage horaire du matin et plage horaire du soir: déclinaison 180° 0' 0''.";
+    L_arr[13] =
+      " Cadran de haute latitude (Norvège) avec heures temporaires courbes.";
+    L_arr[14] =
+      " Méridiennes de temps solaire moyen pour une même latitude Nord et Sud.";
+    L_arr[15] =
+      " Calcul de la déclinaison d'une façade avec Google Earth: NANTES, méridienne du N°8 Place de la Bourse.";
+   
+    buttons.forEach((button) => {
+      button.addEventListener("click", (e) => {
+        const calcNextSlide = e.target.id === "next" ? 1 : -1;
+        const slideActive = document.querySelector(".active");
+        newIndex = calcNextSlide + [...slides].indexOf(slideActive);
+        if (newIndex < 0) newIndex = [...slides].length - 1;
+        if (newIndex >= [...slides].length) newIndex = 0;
+        i = newIndex;
+        n = newIndex;
+        if (i < 9) {
+          C_arr[i] = "0" + [n + 1] + "/16";
+        } else {
+          C_arr[i] = [n + 1] + "/16";
+        }
+        Compteur.innerHTML = C_arr[i];
+        Legende.innerHTML = L_arr[i];
+        slides[newIndex].classList.add("active");
+        slideActive.classList.remove("active");
+      });
+    });
+
+  </script>
+
+</html>
